@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  xeyes:
+      image: "carlomt/xeyes"
+      stdin_open: true
+      tty: true
+      volumes:
+         - X11-unix:/tmp/.X11-unix
+      environment:
+         - DISPLAY=${DOCKERDISPLAY}
+  lfc:
+      image: "carlomt/lfc"
+      stdin_open: true
+      tty: true
+      environment:
+         - DISPLAY=${DOCKERDISPLAY}
+      entrypoint: ["/usr/bin/bash", "-l"]
+      volumes:
+         - X11-unix:/tmp/.X11-unix
+         - ./workdir:/root
+      working_dir: /root
+  lfc-nogui:
+      image: "carlomt/lfc"
+      stdin_open: true
+      tty: true
+      entrypoint: ["/usr/bin/bash", "-l"]
+      volumes:
+         - ./workdir:/root
+      working_dir: /root      
+volumes:
+   workdir:
+       external: true
+   X11-unix:
+       driver: local
+       driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: '${X11FOLDER}'
