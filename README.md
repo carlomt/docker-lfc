@@ -2,6 +2,11 @@
 
 ## Docker container for the Sapienza LFC course
 
+Docker is a container system. You could see it as a very light virtual machine.
+To use it, firstly docwnload Docker Desktop from:
+
+https://www.docker.com/products/docker-desktop/
+
 ### GUI
 
 to use the GUI you need to allow X11 forwarding. In the following you will find the instruction for each operating system.
