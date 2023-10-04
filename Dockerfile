@@ -19,10 +19,22 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     clang \
     emacs \
     gnuplot \
+    python3 \
+    python3-pip \
     && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/cache/apt/archives/* && \
     rm -rf /var/lib/apt/lists/*
-    
+
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install \
+    numpy \
+    scipy \
+    matplotlib \
+    ipython \
+    python3-tk
+
+RUN echo "backend: TkAgg" >> /usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/matplotlibr
+
 ENTRYPOINT  ["/usr/bin/bash", "-l"]
