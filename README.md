@@ -4,12 +4,13 @@
 
 ### GUI
 
-to use the GUI you need to allow X11 forwarding
+to use the GUI you need to allow X11 forwarding. In the following you will find the instruction for each operating system.
 
 #### Linux
 Add local connections to X11 access control list:
 
 `xhost local:root`
+
 
 #### Windows
 If you don't have X11 already installed (it should be on the latest versions of Windows 11), download XMing from
@@ -62,7 +63,7 @@ xhost +localhost
 ```
 the latter command has to be executed every time XQuartz is restarted.
 
-## Run the container
+## How to run the container
 
 Download the docker-compse.yml file in the folder you want to use to work:
 ```
@@ -84,7 +85,8 @@ curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_windows --out
 curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_mac --output .env
 ```
 
-run:
+finally, run the container:
+
 `docker compose run lfc`
 
 it will create the subfolder `workdir` in which you will find anything to do in the home folder of the container.
@@ -95,3 +97,5 @@ Remember that still you should enable the X11 forwarding every time you reboot (
 `xhost local:root` on linux
 
 `xhost +localhost` on mac
+
+to close the container type `exit` and press return.
