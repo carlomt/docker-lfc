@@ -92,15 +92,15 @@ curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_mac --output 
 
 finally, run the container:
 
-`docker compose run --rm lfc`
+```
+docker compose run --rm lfc
+```
 
 it will create the subfolder `workdir` in which you will find anything to do in the home folder of the container.
 All the files you will create outside of the home folder of the container will be deleted when you close the container and are not available on the host machine.
 
-Remember that still you should enable the X11 forwarding every time you reboot (or restart the X11 server)
-
-`xhost local:root` on linux
-
-`xhost +localhost` on mac
+Remember that still you should enable the X11 forwarding every time you reboot (or restart the X11 server):
+- `xhost local:root` on linux
+- `xhost +localhost` on mac
 
 to close the container type `exit` and press return.
