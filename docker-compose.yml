@@ -13,7 +13,6 @@ services:
       tty: true
       environment:
          - DISPLAY=${DOCKERDISPLAY}
-      entrypoint: ["/usr/bin/bash", "-l"]
       volumes:
          - X11-unix:/tmp/.X11-unix
          - ./workdir:/root
@@ -22,7 +21,6 @@ services:
       image: "carlomt/lfc"
       stdin_open: true
       tty: true
-      entrypoint: ["/usr/bin/bash", "-l"]
       volumes:
          - ./workdir:/root
       working_dir: /root      
