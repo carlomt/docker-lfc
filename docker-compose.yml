@@ -8,7 +8,7 @@ services:
       environment:
          - DISPLAY=${DOCKERDISPLAY}
   lfc:
-      image: "carlomt/lfc"
+      image: "ghcr.io/carlomt/docker-lfc:main"
       stdin_open: true
       tty: true
       environment:
@@ -18,7 +18,7 @@ services:
          - ./workdir:/root
       working_dir: /root
   lfc-nogui:
-      image: "carlomt/lfc"
+      image: "ghcr.io/carlomt/docker-lfc:main"
       stdin_open: true
       tty: true
       volumes:
