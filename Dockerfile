@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
-LABEL maintainer="carlo.mancini-terracciano@uniroma1.it"
 
+LABEL maintainer="carlo.mancini-terracciano@uniroma1.it"
 LABEL org.opencontainers.image.source=https://github.com/carlomt/docker-lfc
 LABEL org.opencontainers.image.description="Docker container for the Sapienza LFC course"
 
