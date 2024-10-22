@@ -8,7 +8,6 @@ WORKDIR /workspace
 
 ENV LANG=C.UTF-8
 RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
-ENV DEBIAN_FRONTEND=noninteractive
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
