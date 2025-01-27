@@ -12,20 +12,22 @@ RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get -yq install\
+    build-essential \
+    git \
     ca-certificates \
+    clang \
+    cmake \ 
     cppcheck \
     curl \    
     dirmngr \
-    gpg \
-    wget \
-    less \
-    build-essential \
-    clang \
     emacs \
+    gpg \
     gnuplot \
+    less \
     python3 \
     python3-pip \
-    python3-tk \    
+    python3-tk \
+    wget \
     && \
     apt-get -y autoremove && \
     apt-get -y clean && \
@@ -39,6 +41,14 @@ RUN python3 -m pip install --upgrade pip && \
     matplotlib \
     ipython \
     ;
+
+# Scarica e compila Google Test
+RUN git clone https://github.com/google/googletest.git /googletest && \
+    cd /googletest && \
+    cmake -S . -B build && \
+    cmake --build build && \
+    cmake --install build --prefix /usr/local && \
+    rm -rf /googletest
 
 RUN echo "backend: TkAgg" >> /usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/matplotlibr
 
