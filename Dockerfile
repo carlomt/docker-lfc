@@ -4,8 +4,6 @@ LABEL maintainer="carlo.mancini-terracciano@uniroma1.it"
 LABEL org.opencontainers.image.source=https://github.com/carlomt/docker-lfc
 LABEL org.opencontainers.image.description="Docker container for the Sapienza LFC course"
 
-WORKDIR /workspace
-
 ENV LANG=C.UTF-8
 RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
@@ -51,6 +49,8 @@ RUN git clone https://github.com/google/googletest.git /googletest && \
     rm -rf /googletest
 
 RUN echo "backend: TkAgg" >> /usr/local/lib/python3.10/dist-packages/matplotlib/mpl-data/matplotlibr
+
+WORKDIR /workspace
 
 ENTRYPOINT ["/usr/bin/bash", "-c", "exec \"$@\"", "--"]
 CMD ["/usr/bin/bash"]
