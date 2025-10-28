@@ -74,6 +74,10 @@ Download the docker-compse.yml file in the folder you want to use to work:
 ```
 curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/docker-compose.yml --output docker-compose.yml
 ```
+on Windows PowerShell:
+```
+Invoke-WebRequest https://raw.githubusercontent.com/carlomt/docker-lfc/main/docker-compose.yml -OutFile docker-compose.yml
+```
 
 in the same folder, download one of the following files accordingly to your operating system:
 
