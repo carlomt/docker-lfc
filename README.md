@@ -85,6 +85,10 @@ curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_linux --outpu
 ```
 curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_windows --output .env
 ```
+on Windows PowerShell:
+```
+Invoke-WebRequest https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_windows -OutFile .env
+```
 - mac
 ```
 curl https://raw.githubusercontent.com/carlomt/docker-lfc/main/env_mac --output .env
